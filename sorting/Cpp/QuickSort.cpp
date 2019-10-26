@@ -10,32 +10,27 @@ int part(int* arr,int low,int high)
     while(i<=j)
     {
         while(arr[i] <= pivot)
-        {
-            i++;
-        }
+              i++;
         while(arr[j] > pivot)
-        {
-            j--;
-        }
+              j--;
         if(i<j)
-        {
-            swap(arr[i],arr[j]);
-        }
+              swap(arr[i],arr[j]);
     }
     swap(arr[low],arr[j]);
     return j;
-}
+}//part() ends here
+
 void Quick_sort(int* arr,int low, int high)
 {
     int m;
     if(low<high)
     {
         m = part(arr,low,high);
-        Quick_sort(arr,low,m-1);
-        Quick_sort(arr,m+1,high);
+        Quick_sort(arr,low,m-1);//quick sort the left sub array
+        Quick_sort(arr,m+1,high);//quick sort the right sub array
 
     }
-}
+}// Quick_sort() ends here
 int main()
 {
     int *arr,i,j;
